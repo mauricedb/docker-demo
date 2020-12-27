@@ -1,14 +1,12 @@
 import * as yup from 'yup';
 
-const personSchema = yup
-  .object({
-    firstName: yup.string().defined(),
-    lastName: yup.string().defined(),
-    email: yup.string().email().nullable().defined(),
-  })
-  .defined();
+const personSchema = yup.object({
+  firstName: yup.string().defined(),
+  lastName: yup.string().defined(),
+  email: yup.string().email().nullable().defined(),
+});
 
-type Person = yup.InferType<typeof personSchema>;
+type Person = yup.Asserts<typeof personSchema>;
 
 export const YupDemo = () => {
   const person: Person = {
