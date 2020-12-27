@@ -1,24 +1,24 @@
 import React from 'react';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import { YupDemo } from './YupDemo';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <header>
+          <Link to="/">Home</Link>
+          &nbsp;|&nbsp;
+          <Link to="/yup-demo">Yup Demo</Link>
+        </header>
+        <Switch>
+          <Route path="/yup-demo">
+            <YupDemo />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
