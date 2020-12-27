@@ -4,7 +4,7 @@ const personSchema = yup
   .object({
     firstName: yup.string().defined(),
     lastName: yup.string().defined(),
-    email: yup.string().email().defined().nullable(),
+    email: yup.string().email().nullable().defined(),
   })
   .defined();
 
